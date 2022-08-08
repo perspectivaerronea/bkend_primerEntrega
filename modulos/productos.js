@@ -3,8 +3,6 @@ const { Router } = express;
 const router = Router();
 const Contenededor = require('./contenedor');
 
-const admin = true;
-
 class Producto {
     constructor(nombre, descripcion, codigo, foto, precio, stock, timestamp, id) {
         this.nombre = nombre;
@@ -26,13 +24,18 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    const el = await archivo.getById(req.params.id);
+    const el = await archivo.getById(req.params.id);    
     res.status(201).send(el);
 });
 
+router.get('/admin/cambio', (req, res) => {    
+    const admin  = archivo.cambiaAdmin();        
+    res.status(201).send(admin);
+});
+
 router.post('/', async (req, res) => {
-    const nuevo = req.body;
-    if (admin) {
+    const nuevo = req.body;    
+    if (archivo.soyAdmin() == true) {
         const id = await archivo.save(new Producto(nuevo.nombre, nuevo.descripcion, nuevo.codigo, nuevo.foto, parseFloat(nuevo.precio), parseFloat(nuevo.stock)));
         res.status(201).send({ 'status': 'Ok', 'nuevo id': id });
     } else {
@@ -41,8 +44,8 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-    const nuevo = req.body;
-    if (admin) {
+    const nuevo = req.body;    
+    if (archivo.soyAdmin() == true) {
         const id = await archivo.update(new Producto(nuevo.nombre, nuevo.descripcion, nuevo.codigo, nuevo.foto, parseFloat(nuevo.precio), parseFloat(nuevo.stock), nuevo.timestamp, nuevo.id));
         res.status(201).send({ 'status': 'Ok', 'id actualizado': id })
     } else {
@@ -51,11 +54,10 @@ router.put('/:id', async (req, res) => {
 
 });
 
-router.delete('/:id', async (req, res) => {
-    console.log(req.params.id);
-    if (admin) {
+router.delete('/:id', async (req, res) => {    
+    if (archivo.soyAdmin() == true) {
         const el = await archivo.deleteById(req.params.id);
-        res.status(201).send({ 'status': 'Ok', 'registro eliminado': el })
+        res.status(201).send({ 'status': 'Ok', 'registro eliminado': el })        
     } else {
         res.status(501).send({ 'error': '-1', 'descripcion': `la ruta ${req.path} metodo ${req.method} no se encuentra autorizada` });
     }

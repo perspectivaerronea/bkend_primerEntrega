@@ -6,6 +6,16 @@ class Contenedor {
     constructor(nombreArchivo) {
         this.arch = nombreArchivo;
         this.ruta = this.arch;    
+        this.admin = true;
+    }
+
+    cambiaAdmin(){
+        this.admin = this.admin ? false : true;        
+        return this.admin;
+    }
+
+    soyAdmin(){
+        return this.admin;
     }
 
     async getAll() {

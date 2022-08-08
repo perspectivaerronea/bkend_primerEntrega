@@ -75,6 +75,7 @@ router.get('/:id/productos', async (req, res) => {
 
 });
 
+
 router.post('/', async (req, res) => {
     const nuevo = req.body;
     const id = await archivo.save(new Carrito());

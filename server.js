@@ -17,7 +17,7 @@ app.get('/productos', function (req, res) {
 app.get('/carrito', function (req, res) {
     res.status(201).render('./carrito.html');
 });
-// app.use('/carrito', "carrito");
+
 app.use('/api/productos', productos);
 app.use('/api/carrito', carrito);
 app.get('*', function (req, res) {
