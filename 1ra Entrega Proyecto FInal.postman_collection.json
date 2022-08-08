@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "74abb92d-2f6d-4f05-9d46-1b227839dcdd",
+		"name": "1ra Entrega Proyecto Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21756166"
+	},
+	"item": [
+		{
+			"name": "Obtener Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/productos/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cargar Producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Prueba 2\" ,\r\n    \"descripcion\": \"Prueba Descr3\",\r\n    \"codigo\": \"0002\",\r\n    \"foto\": \"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Superliminal3.jpg\",\r\n    \"precio\": 159.9,\r\n    \"stock\": 100 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/productos/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Producto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"descripcion\": \"Prueba Descr\",\r\n    \"codigo\": \"0001\",\r\n    \"foto\": \"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Superliminal.jpg\",\r\n    \"precio\": 159.9,\r\n    \"stock\": 100,\r\n    \"timestamp\": 1659745863076,\r\n    \"id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/productos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/productos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Carrito",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/carrito/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Lista Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/carrito/1/productos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						"1",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Carrito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/carrito/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cargar Producto en Carrito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Prueba 2\",\r\n        \"descripcion\": \"Prueba Descr3\",\r\n        \"codigo\": \"0002\",\r\n        \"foto\": \"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Superliminal3.jpg\",\r\n        \"precio\": 159.9,\r\n        \"stock\": 100,\r\n        \"timestamp\": 1659753086776,\r\n        \"id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/carrito/1/productos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						"1",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Producto del Carrito",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Prueba 2\",\r\n        \"descripcion\": \"Prueba Descr3\",\r\n        \"codigo\": \"0002\",\r\n        \"foto\": \"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Superliminal3.jpg\",\r\n        \"precio\": 159.9,\r\n        \"stock\": 100,\r\n        \"timestamp\": 1659753086776,\r\n        \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/carrito/1/productos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						"1",
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Carrito",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Prueba 2\",\r\n        \"descripcion\": \"Prueba Descr3\",\r\n        \"codigo\": \"0002\",\r\n        \"foto\": \"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Superliminal3.jpg\",\r\n        \"precio\": 159.9,\r\n        \"stock\": 100,\r\n        \"timestamp\": 1659753086776,\r\n        \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/carrito/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Routing Inexistente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/carrito/todoGratis",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carrito",
+						"todoGratis"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
