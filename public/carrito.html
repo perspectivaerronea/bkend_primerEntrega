@@ -77,14 +77,14 @@
 
 <script type="text/javascript">
     function armadoURLVer() {
-        let destino = `http://localhost:8080/api/carrito/${document.getElementsByName("verID")[0].value}/productos/`;
+        let destino = window.location.protocol + "//" + window.location.host + `/api/carrito/${document.getElementsByName("verID")[0].value}/productos/`;
         let formulario = document.getElementById('verListaProductos');
         formulario.action = destino;
     }
 
     function armadoURLNuevoProducto() {
         let id = document.getElementsByName("id_carrito")[0].value;
-        let destino = `http://localhost:8080/api/carrito/${id}/productos/`;
+        let destino = window.location.protocol + "//" + window.location.host + `/api/carrito/${id}/productos/`;
 
         fetch(destino, {
             method: 'POST',
@@ -117,7 +117,7 @@
 
     function armadoURLDelete() {
         let id = document.getElementsByName("deleteID")[0].value;
-        let destino = `http://localhost:8080/api/carrito/${id}`;        
+        let destino = window.location.protocol + "//" + window.location.host + `/api/carrito/${id}`;        
 
         fetch(destino, {
             method: 'DELETE'
@@ -139,7 +139,7 @@
     function armadoURLDeleteProd() {
         let id = document.getElementsByName("deleteIDCarrito")[0].value;
         let id_prod = document.getElementsByName("deleteIDProd")[0].value;
-        let destino = `http://localhost:8080/api/carrito/${id}/productos/${id_prod}`;        
+        let destino = window.location.protocol + "//" + window.location.host + `/api/carrito/${id}/productos/${id_prod}`;        
 
         fetch(destino, {
             method: 'DELETE'

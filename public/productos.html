@@ -86,14 +86,14 @@
 
 <script type="text/javascript">
     function armadoURLVer() {
-        let destino = "http://localhost:8080/api/productos/" + document.getElementsByName("verID")[0].value;
+        let destino = window.location.protocol + "//" + window.location.host + "/api/productos/" + document.getElementsByName("verID")[0].value;
         let formulario = document.getElementById('verProducto');
         formulario.action = destino;
     }
 
     function armadoURLUpdate() {
         let id = document.getElementsByName("updateID")[0].value;
-        let destino = `http://localhost:8080/api/productos/${id}`;
+        let destino = window.location.protocol + "//" + window.location.host + `/api/productos/${id}`;
 
         fetch(destino, {
             method: 'PUT',
@@ -130,7 +130,7 @@
 
     function armadoURLDelete() {
         let id = document.getElementsByName("deleteID")[0].value;
-        let destino = `http://localhost:8080/api/productos/${id}`;
+        let destino = window.location.protocol + "//" + window.location.host + `/api/productos/${id}`;
         console.log("ID: " + id + ' ' + destino);
 
         fetch(destino, {
