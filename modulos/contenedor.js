@@ -1,3 +1,4 @@
+const { log } = require('console');
 const fs = require('fs');
 const { format } = require('path');
 
@@ -43,10 +44,18 @@ class Contenedor {
     async update(elemento) {
         let arr = await this.getAll();        
         try {
-            const index = arr.findIndex((el) => (parseInt(el.id) === parseInt(elemento.id)));
-            console.log(elemento);
-            if (index >= 0) {
-                arr[index] = elemento;
+            const index = arr.findIndex((el) => (parseInt(el.id) === parseInt(elemento.id)));            
+            if (index >= 0) {                
+                for(const el_prop in  arr[index]){
+                    for(const elemento_prop in elemento){
+                        if(el_prop === elemento_prop && el_prop !== 'id' && el_prop !== 'timestamp'){                            
+                            if(arr[index][el_prop] != elemento[elemento_prop] && elemento[elemento_prop] != '' && elemento[elemento_prop] != 0){
+                                arr[index][el_prop] = elemento[elemento_prop]
+                            }
+                        }
+                    }
+                }
+                console.log(arr);
                 await fs.promises.writeFile(this.ruta, JSON.stringify(arr, null, 2));
                 return elemento.id;
             }
