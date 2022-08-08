@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Superliminal",
+    "price": 185.61,
+    "thumbnail": "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Superliminal.jpg",
+    "id": 1
+  },
+  {
+    "title": "The Stanley Parable: Ultra Deluxe",
+    "price": 161.99,
+    "thumbnail": "https://store.steampowered.com/app/1703340/The_Stanley_Parable_Ultra_Deluxe/",
+    "id": 2
+  },
+  {
+    "title": "UnMetal",
+    "price": 1324.13,
+    "thumbnail": "https://store.steampowered.com/app/1203710/UnMetal/",
+    "id": 3
+  },
+  {
+    "title": "test",
+    "price": 0,
+    "thumbnail": "http://www.google.com.ar",
+    "id": "4"
+  },
+  {
+    "title": "NieR:Automata",
+    "price": 1072.49,
+    "thumbnail": "https://store.steampowered.com/app/524220/NieRAutomata/",
+    "id": 5
+  }
+]
